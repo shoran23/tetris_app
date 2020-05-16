@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class GameBoard extends Component.React {
     state = {
         squareWidth: '50px',
@@ -8,6 +9,8 @@ class GameBoard extends Component.React {
         red: 'red',
         green: 'green',
         orange: 'orange',
+        pink: 'pink',
+        purple: 'purple',
         shapes: [
             {
                 name: 'O',
@@ -40,12 +43,26 @@ class GameBoard extends Component.React {
             {
                 name: 'L',
                 color: this.state.orange,
-                squares: []
+                squares: ['l-top','l-middle-top','l-middle-bottom','bottom','bottom-right'],
+                width: this.state.squareWidth,
+                height: this.state.squareHeight
+            },
+            {
+                name: 'J',
+                color: this.state.pink,
+                squares: ['j-top','j-middle-top','j-middle-bottom','bottom','bottom-left'],
+                width: this.state.squareWidth,
+                height: this.state.squareHeight
+            },
+            {
+                name: 'T',
+                color: this.state.purple,
+                squares: ['t-top-left','t-top-middle','t-top-right','bottom'],
+                width: this.state.squareWidth,
+                height: this.state.squareHeight
             }
         ]    
     }    
-
-
     render() {
         return (
             <div className='gameboard'>
